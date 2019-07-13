@@ -1,4 +1,4 @@
-class Article {
+export default class Article {
   constructor(url) {
     this.article = url;
   }
@@ -7,5 +7,3 @@ class Article {
     return this.article;
   }
 }
-
-export default Article;

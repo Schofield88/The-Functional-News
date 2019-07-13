@@ -1,4 +1,4 @@
-class List {
+export default class List {
   constructor(articleModel) {
     this.articleArray = [];
     this.article = articleModel;
@@ -14,5 +14,3 @@ class List {
     this.articleArray.push(newArticle);
   }
 }
-
-export default List;
