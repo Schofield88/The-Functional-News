@@ -2,9 +2,11 @@
 
 ## Objective
 
-Finally attempt the Makers week 7 News Challenge, but as a full-stack exercise.
+Finally attempt the Makers week 7 News Challenge as a full-stack exercise.
 
 ## Setup
+
+This is an Express-based app; to run it, you will need Node installed on your machine.
 
 Clone the repository, then at the command line run:
 
@@ -14,7 +16,7 @@ to install dependencies. To start the server:
 
 ```npm run start```
 
-The server will listen on port 8080, so open [http://localhost:8080/news](http://localhost:8080/news) to view.
+The server listens on port 8080 - [click here to view.](http://localhost:8080/news)
 
 ## Design choices
 
@@ -22,6 +24,6 @@ The original challenge was to create a single-page app that rendered a selection
 
 At the time, I did not have the first clue how to even start attempting this.
 
-The challenge was also a demonstration of the Fat Client paradigm, in which the entirety of the page ran in the front end. The app was statically-served with a basic HTTP server.
+The challenge was also a demonstration of a "Fat Client", in which the entirety of the page ran in the front end. The app was statically-served with a basic HTTP server.
 
 As this was a follow-up/continuation project to finally lay a ghost to rest, plus stitch everything I've learnt together, this solution to the challenge has been written full-stack as an Express.js app with all of the logic occurring server-side. The API call is made by the controller function for the /news URL, which then renders the resulting links in a Handlebars template.
