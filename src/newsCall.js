@@ -1,4 +1,6 @@
-export default class NewsCall {
+const fetch = require('node-fetch');
+
+class NewsCall {
   constructor() {
     this.apiRequest = 'https://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?section=politics';
   }
@@ -17,3 +19,5 @@ export default class NewsCall {
     });
   }
 }
+
+module.exports = NewsCall;

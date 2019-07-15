@@ -1,4 +1,4 @@
-export default class Article {
+class Article {
   constructor(url) {
     this.article = url;
   }
@@ -7,3 +7,5 @@ export default class Article {
     return this.article;
   }
 }
+
+module.exports = Article;
