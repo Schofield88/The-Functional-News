@@ -8,10 +8,17 @@ exports.thisIsTheNews = (req, res, next) => {
   const view = new ListView();
   const news = new NewsCall();
 
-  news.getNews()
+  news
+    .getNews()
     .then((newsArray) => {
-      newsArray.forEach(article => list.addArticle(article.webUrl));
+      newsArray.forEach(article => list.addArticle({ webTitle: article.webTitle, webUrl: article.webUrl }));
     })
-    .then(() => view.formatHTML(list))
-    .then(listOfUrls => res.render('index', { title: 'Stand by for the news', news: listOfUrls }));
+    .then(() => list.listArticles())
+    .then((arrayOfArticles) => {
+      console.log(arrayOfArticles);
+      res.render('index', {
+        title: 'Stand by for the news',
+        news: arrayOfArticles,
+      });
+    });
 };

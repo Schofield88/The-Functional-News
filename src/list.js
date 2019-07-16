@@ -11,7 +11,7 @@ class List {
   addArticle(articleURL) {
     const Article = this.article;
     const newArticle = new Article(articleURL);
-    this.articleArray.push(newArticle);
+    this.articleArray.push(newArticle.read());
   }
 }
 

@@ -1,5 +1,11 @@
 <h1>{{ title }}</h1>
 <p>Hello, Dave</p>
-<div id="news">
-  {{{ news }}}
+<div id="news_list">
+  <ul>
+    {{#each news as |item|}}
+      <li>
+        <a href={{ item.webUrl }}>{{ item.webTitle }}</a>
+      </li>
+    {{/each}}
+  </ul>
 </div>
