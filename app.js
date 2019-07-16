@@ -1,5 +1,5 @@
 const express = require('express');
-const es6Renderer = require('express-es6-template-engine');
+const hbs = require('express-handlebars');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
@@ -8,9 +8,10 @@ const homeRouter = require('./routes/home');
 const newsRouter = require('./routes/news');
 
 const app = express();
-app.engine('html', es6Renderer);
+// view engine setup
+app.engine('hbs', hbs({ extname: 'hbs', defaultLayout: 'layout', layoutDir: `${__dirname}/views/layouts/` }));
 app.set('views', 'views');
-app.set('view engine', 'html');
+app.set('view engine', 'hbs');
 
 app.use(logger('dev'));
 app.use(express.json());

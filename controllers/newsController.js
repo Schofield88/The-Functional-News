@@ -13,6 +13,5 @@ exports.thisIsTheNews = (req, res, next) => {
       newsArray.forEach(article => list.addArticle(article.webUrl));
     })
     .then(() => view.formatHTML(list))
-    .then(listOfUrls => res.send(listOfUrls));
-  // res.render('index');
+    .then(listOfUrls => res.render('index', { title: 'Stand by for the news', news: listOfUrls }));
 };
