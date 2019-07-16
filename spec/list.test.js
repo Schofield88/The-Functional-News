@@ -9,11 +9,14 @@ describe('List', () => {
   });
 
   it('adds a new article model with addArticle()', () => {
-    const articleURL = 'http://www.guardian.com/article';
+    const articleObject = {
+      webTitle: 'Today in the news',
+      webUrl: 'http://www.guardian.com/article',
+    };
 
-    list.addArticle(articleURL);
+    list.addArticle(articleObject);
 
-    expect(articleMock).toHaveBeenCalledWith(articleURL);
+    expect(articleMock).toHaveBeenCalledWith(articleObject);
     expect(list.listArticles()).toHaveLength(1);
   });
 });
