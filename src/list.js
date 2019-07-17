@@ -11,6 +11,8 @@ class List {
   addArticle(articleURL) {
     const Article = this.article;
     const newArticle = new Article(articleURL);
+    const readArticle = newArticle.read();
+    console.log(readArticle);
     this.articleArray.push(newArticle.read());
   }
 }

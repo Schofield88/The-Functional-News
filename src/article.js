@@ -1,6 +1,6 @@
 class Article {
-  constructor(url) {
-    this.article = url;
+  constructor(urlObject) {
+    this.article = urlObject;
   }
 
   read() {
