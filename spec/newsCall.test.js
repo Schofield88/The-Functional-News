@@ -23,7 +23,7 @@ describe('NewsCall', () => {
             webTitle: 'Brexit happens, hilarity ensues',
             webUrl: 'https://www.thelulz.com/politics/blog/live/2019/jul/15/brexit-lulz',
             apiUrl:
-							'https://content.guardianapis.com/politics/blog/live/2019/jul/15/tory-leadership-latest-news-boris-johnson-liam-fox-dismisses-boris-johnsons-plans-for-us-uk-trade-deal-as-unrealistic-live-news',
+							'https://content.thelulz.com/politics/blog/live/2019/jul/15/brexit-rofl-and-lol',
             isHosted: false,
             pillarId: 'pillar/news',
             pillarName: 'News',
@@ -34,7 +34,7 @@ describe('NewsCall', () => {
 
     const news = new NewsCall();
     news.makeTheCall = jest.fn().mockImplementation(() => Promise.resolve(response));
-    const myNews = news.getNews().then((data) => {
+    news.getNews().then((data) => {
       const newsObject = data[0];
       expect(newsObject).toHaveProperty('webTitle');
       expect(newsObject).toHaveProperty('webUrl');

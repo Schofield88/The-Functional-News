@@ -1,8 +1,28 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: "AvenirNext-Medium";
+  text-align: center;
 }
 
-a {
-  color: #00B7FF;
+#header {
+  background-color: lightgrey;
+  font-family: "AvenirNext-Heavy";
+  font-size: 175%;
+  margin-bottom: 20px;
+}
+
+.shadow {
+  box-shadow: 7px 7px 9px grey;
+  border-radius: 7px;
+}
+
+.news_section {
+  position: sticky;
+  top: 20px;
+}
+
+.articles {
+  text-align: left;
+  background-color: lightgrey;
+  margin-bottom: 20px;
+  padding: 5px 20px 5px 20px;
 }

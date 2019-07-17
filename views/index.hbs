@@ -1,11 +1,16 @@
-<h1>{{ title }}</h1>
-<p>Hello, Dave</p>
-<div id="news_list">
-  <ul>
+<div class="container_12 clearfix">
+  <div id="header" class="shadow container_12">
+    <h1>This is the news</h1>
+  </div>
+  <div class="news_section grid_3">
+    <h3>Showing Politics</h3>
+    <input type="text" placeholder="Type search term here">
+  </div>
+  <div class="grid_9">
     {{#each news as |item|}}
-      <li>
-        <a href={{ item.webUrl }} target="_blank">{{ item.webTitle }}</a>
-      </li>
-    {{/each}}
-  </ul>
+        <div class="shadow articles">
+          <a href={{ item.webUrl }} target="_blank">{{ item.webTitle }}</a>
+        </div>
+      {{/each}}
+  </div>
 </div>
