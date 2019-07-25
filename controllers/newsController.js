@@ -8,12 +8,16 @@ exports.thisIsTheNews = (req, res, next) => {
 
   news
     .getNews()
-    .then((newsArray) => {
-      newsArray.forEach(article => list.addArticle({ webTitle: article.webTitle, webUrl: article.webUrl }));
+    .then(newsArray => {
+      newsArray.forEach(article =>
+        list.addArticle({ webTitle: article.webTitle, webUrl: article.webUrl }),
+      );
     })
     .then(() => list.listArticles())
-    .then(arrayOfArticles => res.render('index', {
-      title: 'Stand by for the news',
-      news: arrayOfArticles,
-    }));
+    .then(arrayOfArticles =>
+      res.render('index', {
+        title: 'Stand by for the news',
+        news: arrayOfArticles,
+      }),
+    );
 };
